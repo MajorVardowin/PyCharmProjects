@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import PySimpleGUI as Sg
 
 nutzer = ''
 
@@ -13,21 +13,21 @@ def check(user, password):
 
 
 def gui_test():
-    sg.theme('BlueMono')  # Add a touch of color
+    Sg.theme('BlueMono')  # Add a touch of color
     # All the stuff inside your window.
-    layout = [[sg.Text('Login to Admin Interface:')],
-              [sg.Text('Username:'), sg.InputText(tooltip='Enter Username', key='-INPUT-')],
-              [sg.Text('Password:'), sg.InputText(tooltip='Enter Password', key='-INPUT2-', password_char='*')],
-              [sg.Button('Ok'), sg.Button('Clear')],
-              [sg.Button('Exit')]]
+    layout = [[Sg.Text('Login to Admin Interface:')],
+              [Sg.Text('Username:'), Sg.InputText(tooltip='Enter Username', key='-INPUT-')],
+              [Sg.Text('Password:'), Sg.InputText(tooltip='Enter Password', key='-INPUT2-', password_char='*')],
+              [Sg.Button('Ok'), Sg.Button('Clear')],
+              [Sg.Button('Exit')]]
 
     # Create the Window
-    window = sg.Window('Window Title', layout)
+    window = Sg.Window('Window Title', layout)
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
         event, values = window.read()
 
-        if event == sg.WIN_CLOSED or event == 'Exit':  # if user closes window or clicks Exit
+        if event == Sg.WIN_CLOSED or event == 'Exit':  # if user closes window or clicks Exit
             window.close()
             return False
         if event == 'Ok':
